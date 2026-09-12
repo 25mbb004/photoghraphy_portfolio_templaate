@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-theme-root="paper">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Owner's Guide · The Thermochrome Ledger</title>
+  <meta name="description" content="How this portfolio works: design philosophy, folder structure, the kelvin ambiance system, typography, motion, the admin panel, image replacement, editing workflow and deployment.">
+  <meta property="og:title" content="Owner's Guide · The Thermochrome Ledger">
+  <meta property="og:description" content="How this portfolio works: design philosophy, folder structure, the kelvin ambiance system, typography, motion, the admin panel, image replacement, editing workflow and deployment.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://iris-kavan-ledger.netlify.app/guide.html">
+  <meta name="theme-color" content="#f0e8d6">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/fraunces-italic-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/fragment-mono.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script type="module" src="/assets/js/app.js"></script>
+</head>
+<body data-theme="paper">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="ambient-field" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="boot" aria-hidden="true">
+    <div class="boot-inner">
+      <div class="k-num"><span>01859</span> K</div>
+      <div class="meter"><i></i></div>
+      <div class="mono mono-s">Metering available light</div>
+    </div>
+  </div>
+
+  <header class="masthead">
+    <a class="wordmark" href="/">Iris Kavan <span class="dot" aria-hidden="true"></span></a>
+    <div class="masthead-mid" aria-hidden="true">
+      <span>Studies in available light</span>
+      <span class="k-live">3200 K</span>
+    </div>
+    <button class="menu-btn" data-open aria-expanded="false" aria-controls="menu" aria-haspopup="dialog">
+      <span class="blades" aria-hidden="true"></span> Index
+    </button>
+  </header>
+
+  <nav class="menu" id="menu" aria-label="Site index">
+    <div class="menu-inner">
+      <button class="menu-btn menu-close">Close</button>
+      <ul class="menu-list">
+        <li><a href="/" data-k="3200" style="--mk:#d9a662">Home</a></li>
+        <li><a href="/work.html" data-k="1859" style="--mk:#e6913c">Selected Work</a></li>
+        <li><a href="/archive.html" data-k="2200" style="--mk:#dd7f31">Project Archive</a></li>
+        <li><a href="/about.html" data-k="4400" style="--mk:#c9b58e">About</a></li>
+        <li><a href="/services.html" data-k="5600" style="--mk:#a3b4ae">Services</a></li>
+        <li><a href="/testimonials.html" data-k="6500" style="--mk:#a3b4ae">Testimonials</a></li>
+        <li><a href="/contact.html" data-k="10500" style="--mk:#7e9cb8">Contact</a></li>
+      </ul>
+    </div>
+    <div class="menu-side">
+      <div class="spine" aria-hidden="true"></div>
+      <div class="block">
+        <p class="mono mono-s mute">The ledger runs<br>1859 K – 12040 K</p>
+      </div>
+      <address>
+        <p class="mono mono-s"><a href="mailto:hello@iriskavan.studio">hello@iriskavan.studio</a><br>
+        <a href="https://instagram.com" rel="noopener" target="_blank">Instagram</a> · <a href="https://vimeo.com" rel="noopener" target="_blank">Vimeo</a> · <a href="https://are.na" rel="noopener" target="_blank">Are.na</a></p>
+      </address>
+      <p class="mono mono-s mute"><a href="/guide.html">Owner's guide →</a></p>
+    </div>
+  </nav>
+
+  <div class="k-rail" aria-hidden="true">
+    <span class="cap">Colour temperature</span>
+    <div class="track"><span class="needle"></span></div>
+    <span class="read">3200 K</span>
+  </div>
+
+  <main id="main" data-page="guide" data-theme="paper" data-k-default="5600">
+
+  <div class="guide-layout wrap" data-k="5600">
+    <nav class="guide-toc" aria-label="Guide contents">
+      <a href="#philosophy">Design philosophy</a>
+      <a href="#admin">The admin panel</a>
+      <a href="#structure">Folder structure</a>
+      <a href="#colour">Colour system</a>
+      <a href="#typography">Typography</a>
+      <a href="#motion">Motion system</a>
+      <a href="#ambiance">The kelvin ambiance</a>
+      <a href="#images">Images</a>
+      <a href="#films">Films &amp; video</a>
+      <a href="#performance">Performance</a>
+      <a href="#accessibility">Accessibility</a>
+      <a href="#deployment">Deployment</a>
+    </nav>
+    <div class="guide-body">
+      <header>
+        <div class="file-line mono"><span class="no">DOC</span><span>Owner's guide</span></div>
+        <h1 class="serif-display dev-title" style="font-size:var(--fs-h2)">The Thermochrome <em>Ledger</em></h1>
+        <p class="lede" style="margin-top:1rem">Everything a photographer needs to make this site their own, no framework knowledge required.</p>
+      </header>
+      <section id="philosophy">
+        <h2>Design philosophy</h2>
+        <p>This site is built on one organising idea: <strong>photography is the management of colour temperature</strong>, so the portfolio is filed like a ledger of light: warmest work first, coolest last, everything indexed in kelvin. Every signature element flows from that premise:</p><ul><li>The <strong>kelvin rail</strong> on the right edge is the site's compass: it shows the temperature of whatever you are reading.</li><li>The <strong>ambient field</strong> re-tints every page toward the section on screen. Scroll through the work page and the room literally warms and cools.</li><li>Images arrive with a <strong>develop reveal</strong>: blown-out and soft, then settling into density, like a print in the bath.</li><li>Navigation passes through an <strong>aperture iris</strong>; the archive is a <strong>contact sheet read with a loupe</strong>; the cursor is a light meter.</li></ul><p>Nothing here is a stock component. If you keep the kelvin premise, you can change every word and image and the site will still feel inevitable.</p>
+      </section>
+      <section id="admin">
+        <h2>The admin panel</h2>
+        <p>Every piece of content on this site — headings, paragraphs, buttons, images, films, navigation, footer, SEO — is edited at <code>/admin</code>, no code required. Content lives in a database, pages are rendered from it on demand, and publishing purges the cache so changes appear immediately.</p><ul><li><strong>Draft → Preview → Publish</strong>: edits save to a draft. Preview shows the draft on the real site; Publish makes it live and files a revision you can roll back to.</li><li><strong>Media library</strong>: upload, crop, compress, alt text, captions; every image picker on the panel draws from it.</li><li><strong>Revisions & activity</strong>: every publish is snapshotted; every action is logged.</li><li><strong>Backup</strong>: export the entire content document as JSON, restore it later.</li></ul><p>The first visit to <code>/admin</code> creates the owner account. Keep the recovery code it shows you: it is the password-reset key.</p>
+      </section>
+      <section id="structure">
+        <h2>Folder structure</h2>
+        <pre><code>site/                    ← static shell (assets, admin app)
+  assets/css/main.css    ← the whole design system, sectioned 01–27
+  assets/js/app.js       ← the whole public engine, zero dependencies
+  assets/fonts/*.woff2   ← self-hosted Fraunces + Fragment Mono
+  admin/                 ← the CMS single-page app
+netlify/functions/       ← the server
+  render.mjs             ← renders every public page from content
+  api.mjs                ← auth + content + media + logs API
+  media.mjs              ← serves uploaded files from the database
+  scheduled.mjs          ← hourly: scheduled publish/unpublish
+  lib/                   ← renderer, sanitizer, auth, default content
+tools/build.mjs          ← static snapshot exporter (optional)</code></pre>
+      </section>
+      <section id="colour">
+        <h2>Colour system</h2>
+        <p>There is no black and no white. The ground colours are <em>nocturne</em> (a darkroom green-black) and <em>archival paper</em> (a warm off-white); the identity colours are the six temperatures of the archive. All of them are CSS custom properties in section 01 of <code>main.css</code>. Change <code>--amber</code> and the accent shifts site-wide; change the six <code>--k-*</code> values and the whole identity re-tunes.</p>
+      </section>
+      <section id="typography">
+        <h2>Typography</h2>
+        <p>Two families, both self-hosted variable fonts:</p><ul><li><strong>Fraunces</strong>: the voice. A wonky old-style serif whose variable axes (<code>opsz</code>, <code>SOFT</code>, <code>WONK</code>) are used as <em>motion parameters</em>: headlines animate from soft/wonky to sharp as they develop, and hover states push titles into their italic, wonky cut.</li><li><strong>Fragment Mono</strong>: the ledger hand. Every index number, caption, kelvin reading and label.</li></ul><p>The scale is fluid (<code>clamp()</code> everywhere, tokens in section 01). To swap fonts, replace the four <code>.woff2</code> files and the <code>@font-face</code> blocks in section 02, but know that the develop animation leans on Fraunces' axes.</p>
+      </section>
+      <section id="motion">
+        <h2>Motion system</h2>
+        <p>Three verbs, used everywhere, defined in section 24 of the CSS:</p><ul><li><code>.dev</code>: <strong>develop</strong> — opacity + blur + over-brightness settling to density. The photographic reveal; used for nearly everything.</li><li><code>.wipe</code>: a print pulled edge-to-edge from the bath (clip-path inset).</li><li><code>.ap-mask</code>: <strong>aperture</strong> — a circular clip that irises open; used on the work-page plates and echoed by the page transition.</li></ul><p>All motion collapses to nothing under <code>prefers-reduced-motion</code>.</p>
+      </section>
+      <section id="ambiance">
+        <h2>The kelvin ambiance</h2>
+        <p>Any element can carry <code>data-k="3200"</code>. As it crosses the middle of the viewport it becomes the page's target temperature; the engine converts kelvin to RGB (a real blackbody approximation) and eases the CSS variable <code>--ambient</code> toward it. That single variable drives the ambient gradient field, the kelvin rail needle, the cursor ring, the ghost numerals and the masthead readout.</p>
+      </section>
+      <section id="images">
+        <h2>Images</h2>
+        <p>Every image is managed from the admin panel's Media library. Uploads are compressed and resized in the browser before they are stored, get alt text and captions, and can be cropped. Any plate can also point at an external URL or keep its seeded placeholder. The kelvin wash (<code>.plate::after</code>) grades everything toward the record's temperature; if your files are already graded, soften it in section 11 of the CSS.</p>
+      </section>
+      <section id="films">
+        <h2>Films &amp; video</h2>
+        <p>Every record's Motion section is a list of reels managed in the admin panel. Each reel is either a self-hosted MP4/WebM (uploaded through the Media library), a Vimeo/YouTube embed URL, or a labelled placeholder. Nothing loads until the viewer presses play. Per-reel toggles: autoplay, loop, mute, controls, poster.</p>
+      </section>
+      <section id="performance">
+        <h2>Performance</h2>
+        <ul><li>No frameworks on the public site: one CSS file, one JS module.</li><li>Pages render server-side from content and are cached at the CDN edge; publishing purges the cache, so the site is as fast as static hosting.</li><li>Fonts are self-hosted, preloaded, <code>font-display: swap</code>.</li><li>Images are lazy-loaded with real dimensions; uploads are compressed and resized before storage.</li><li>The WebGL light field renders at ⅔ resolution, only on the home hero, pauses off-screen.</li></ul>
+      </section>
+      <section id="accessibility">
+        <h2>Accessibility</h2>
+        <ul><li><code>prefers-reduced-motion</code> removes the grain, parallax, tilt, shader, boot count and all reveals; content is simply visible.</li><li>Semantic landmarks, a skip link, focus-visible rings, and a polite live region that announces page changes through the iris router.</li><li>The custom cursor only replaces the pointer on fine-pointer devices; the loupe is decorative and disabled on touch.</li></ul>
+      </section>
+      <section id="deployment">
+        <h2>Deployment</h2>
+        <p>The repository deploys to Netlify: static assets from <code>site/</code>, the renderer and API as Netlify Functions, content and media in Netlify Blobs. The contact form uses Netlify Forms; submissions appear in the Netlify dashboard. No servers to manage.</p>
+      </section>
+    </div>
+  </div>
+
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <p class="foot-sig">The studio is metering new commissions for <em class="wonk">2026</em>.</p>
+        </div>
+        <div>
+          <h4>Index</h4>
+          <ul><li><a href="/">Home</a></li><li><a href="/work.html">Selected Work</a></li><li><a href="/archive.html">Project Archive</a></li><li><a href="/about.html">About</a></li><li><a href="/services.html">Services</a></li><li><a href="/testimonials.html">Testimonials</a></li><li><a href="/contact.html">Contact</a></li>
+            <li><a href="/guide.html">Owner's Guide</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Records</h4>
+          <ul><li><a href="/projects/candle-studies.html">The Candle Studies</a></li><li><a href="/projects/sodium-nights.html">Sodium Nights</a></li><li><a href="/projects/tungsten-interiors.html">Tungsten Interiors</a></li><li><a href="/projects/late-sun-ledger.html">The Late Sun Ledger</a></li><li><a href="/projects/overcast-atlas.html">Overcast Atlas</a></li><li><a href="/projects/blue-hour-protocol.html">Blue Hour Protocol</a></li></ul>
+        </div>
+        <div>
+          <h4>Elsewhere</h4>
+          <ul>
+            <li><a href="mailto:hello@iriskavan.studio">hello@iriskavan.studio</a></li>
+            <li><a href="https://instagram.com" rel="noopener" target="_blank">Instagram</a></li>
+            <li><a href="https://vimeo.com" rel="noopener" target="_blank">Vimeo</a></li>
+            <li><a href="https://are.na" rel="noopener" target="_blank">Are.na</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-base mono mono-s">
+        <span>© 2026 Iris Kavan · all photographs placeholder frames</span>
+        <span>Filed at 55.68° N, 12.57° E · Copenhagen</span>
+        <span>The Thermochrome Ledger, v2</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
